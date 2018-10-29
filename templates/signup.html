@@ -1,0 +1,19 @@
+{%extends 'index.html'%}
+{%block home%}
+<div class="jumbotron container">
+  {%if error%}
+  {{error}}
+  {%endif%}
+  <form method="POST" action="{%url 'signup'%}">
+    {%csrf_token%}
+    <h1>Signup!</h1><br><br>
+    <label for="" style="font-weight:bold;">Username:</label><br>
+    <input type="text" name="username" placeholder="username" class="form-control"><br>
+    <label for="" style="font-weight:bold;">Password:</label><br>
+    <input type="password" name="password1" class="form-control" placeholder="password"><br>
+    <label for="" style="font-weight:bold;">Retry Password:</label><br>
+    <input type="password" name="password2" class="form-control" placeholder="password"><br><br>
+    <input type="submit" name="submit" value="Signup!" class="form-control btn btn-success">
+  </form>
+</div>
+{%endblock%}

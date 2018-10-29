@@ -1,0 +1,20 @@
+{%extends 'index.html'%}
+{%block home%}
+<div class="jumbotron">
+  <form method="POST" action="{%url 'create'%}" enctype="multipart/form-data">
+    {%csrf_token%}
+    <h1>Create</h1><br><br>
+    <label for="" style="font-weight:bold;">Title:</label><br>
+    <input type="text" name="title" class="form-control" required><br>
+    <label for="" style="font-weight:bold;">Body:</label><br>
+    <textarea name="body" rows="8" cols="80" required></textarea><br>
+    <label for="" style="font-weight:bold;">URL:</label><br>
+    <input type="url" name="url" value=""required><br>
+    <label for="" style="font-weight:bold;">Select icon:</label><br>
+    <input type="file" name="icon" value="icon" required><br>
+    <label for="" style="font-weight:bold;">Select an Image:</label><br>
+    <input type="file" name="image" value="image" required><br><br>
+    <input type="submit" name="submit" value="Create" class="form-control btn btn-primary">
+  </form>
+</div>
+{%endblock%}
